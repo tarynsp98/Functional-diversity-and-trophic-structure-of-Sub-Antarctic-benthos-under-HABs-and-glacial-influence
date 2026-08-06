@@ -100,7 +100,7 @@ range_faxes <- range_sp_coord +
 range_faxes
 
 # get species coordinates along the two studied axes:
-sp_faxes_coord_xy <- sp_faxes_coord_benthos[, c("PC4", "PC5")]
+sp_faxes_coord_xy <- sp_faxes_coord_benthos[, c("PC1", "PC2")]
 
 sp_faxes_coord_xy
 
@@ -154,7 +154,7 @@ sp_faxes_coord_fontaine <- sp_filter_fontaine$`species coordinates`
 
 sp_faxes_coord_fontaine
 
-benthos_asb_sp_coord2D_b1 <- sp_faxes_coord_fontaine[, c("PC4", "PC5")]
+benthos_asb_sp_coord2D_b1 <- sp_faxes_coord_fontaine[, c("PC1", "PC2")]
 
 
 # get species coordinates (Seno Ballena):
@@ -162,21 +162,21 @@ sp_faxes_coord_ballena <- sp_filter_ballena$`species coordinates`
 
 sp_faxes_coord_ballena
 
-benthos_asb_sp_coord2D_b2 <- sp_faxes_coord_ballena[, c("PC4", "PC5")]
+benthos_asb_sp_coord2D_b2 <- sp_faxes_coord_ballena[, c("PC1", "PC2")]
 
 # get species coordinates (Bahía Parry):
 sp_faxes_coord_parry <- sp_filter_parry$`species coordinates`
 
 sp_faxes_coord_parry
 
-benthos_asb_sp_coord2D_b3 <- sp_faxes_coord_parry[, c("PC4", "PC5")]
+benthos_asb_sp_coord2D_b3 <- sp_faxes_coord_parry[, c("PC1", "PC2")]
 
 # get species coordinates (Isla iazzi):
 sp_faxes_coord_piazzi <- sp_filter_piazzi$`species coordinates`
 
 sp_faxes_coord_piazzi
 
-benthos_asb_sp_coord2D_b4 <- sp_faxes_coord_piazzi[, c("PC4", "PC5")]
+benthos_asb_sp_coord2D_b4 <- sp_faxes_coord_piazzi[, c("PC1", "PC2")]
 
 #get species that are vertices in the functional space for each location
 vert_nm_fontaine <- mFD::vertices(sp_faxes_coord = sp_faxes_coord_fontaine,
@@ -202,12 +202,12 @@ vert_nm_piazzi <- mFD::vertices(sp_faxes_coord = sp_faxes_coord_piazzi,
 
 vert_nm_piazzi
 
-#list of coordinates in the best fit PCs
+#list of coordinates
 asb_sp_coord2D <- list(
-  Fontaine = sp_faxes_coord_fontaine[, c("PC4", "PC5")],
-  Ballena   = sp_faxes_coord_ballena[, c("PC4", "PC5")],
-  Parry     = sp_faxes_coord_parry[, c("PC4", "PC5")],
-  Piazzi    = sp_faxes_coord_piazzi[, c("PC4", "PC5")]
+  Fontaine = sp_faxes_coord_fontaine[, c("PC1", "PC2")],
+  Ballena   = sp_faxes_coord_ballena[, c("PC1", "PC2")],
+  Parry     = sp_faxes_coord_parry[, c("PC1", "PC2")],
+  Piazzi    = sp_faxes_coord_piazzi[, c("PC1", "PC2")]
 )
 
 #  Convex hull vertices in N dimensions
@@ -279,7 +279,7 @@ plot_try
 #get alpha-functional indices
 
 abund_mat <- as.matrix(abund)
-# Use alpha.fd.multidim() function to get inputs to plot FDiv:
+# Use alpha.fd.multidim() function to get inputs to plot:
 alpha_fd_indices_fruits <- mFD::alpha.fd.multidim(
   sp_faxes_coord   = sp_faxes_coord_benthos[, c("PC1", "PC2", "PC3", "PC4", "PC5")],
   asb_sp_w         = abund_mat,
