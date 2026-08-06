@@ -1,10 +1,8 @@
 # Functional diversity and trophic structure of Sub-Antarctic benthos under HABs and glacial influence
 
-This repository contains the data and R scripts used to analyze trophic structure and functional diversity of benthic communities in Sub-Antarctic fjords and channels, in the context of contrasting environmental stressors such as harmful algal blooms (HABs) and glacial influence.
+This repository contains the R scripts used to analyze trophic structure and functional diversity of benthic communities in Sub-Antarctic fjords and channels, in the context of contrasting environmental stressors such as harmful algal blooms (HABs) and glacial influence.
 
 ## Repository structure
-
-- `data/`: Contains the dataset used for functional diversity analyses.
 - `scripts/`: R scripts used for isotopic analyses (simmr) and functional diversity analyses (mFD).
 - `README.md`: Description of the repository.
 - `LICENSE`: Usage license.
